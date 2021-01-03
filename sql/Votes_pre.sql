@@ -9,3 +9,6 @@ CREATE TABLE Votes (
    jsonfield         jsonb
 );
 
+
+-- will default to 7 days for chunk_time_interval
+SELECT create_hypertable('Votes', 'CreationDate');

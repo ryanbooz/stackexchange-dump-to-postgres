@@ -23,3 +23,5 @@ CREATE TABLE Posts (
     jsonfield              jsonb
 );
 
+-- set chunk_time_interval to 3 days
+SELECT create_hypertable('Posts', 'CreationDate', chunk_time_interval=> INTERVAL '3 days');

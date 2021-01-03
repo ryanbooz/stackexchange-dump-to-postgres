@@ -7,3 +7,6 @@ CREATE TABLE PostLinks (
    LinkTypeId        int         not Null    ,
    jsonfield         jsonb
 );
+
+-- will default to 7 days for chunk_time_interval
+SELECT create_hypertable('PostLinks', 'CreationDate');

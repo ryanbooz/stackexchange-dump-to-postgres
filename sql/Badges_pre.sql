@@ -6,3 +6,6 @@ CREATE TABLE Badges (
    Date              timestamp   not NULL    ,
    jsonfield         jsonb
 );
+
+-- set chunk_time_interval to 30 days
+SELECT create_hypertable('Badges', 'Date', chunk_time_interval => INTERVAL '30 days');
